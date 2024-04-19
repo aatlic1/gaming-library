@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.game.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+    <action
+        android:id="@+id/details"
+        app:destination="@id/gameDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetailsFragment"
+        android:name="com.example.game.GameDetailsFragment"
+        android:label="fragment_game_details"
+        tools:layout="@layout/fragment_game_details" >
+    <action
+        android:id="@+id/home"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
